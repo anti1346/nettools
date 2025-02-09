@@ -13,6 +13,7 @@ RUN apt-get update \
     net-tools traceroute dnsutils \
     ethtool tcpdump ipcalc \
     curl wget vim openssh-server \
+    # sudo git make \
   && apt-get clean autoclean \
   && apt-get autoremove -y \
   && rm -rf /var/lib/apt/lists/* /var/lib/dpkg/info /tmp/* /var/tmp/*

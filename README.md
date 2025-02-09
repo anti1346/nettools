@@ -8,7 +8,7 @@ docker buildx inspect --bootstrap || docker buildx create --use
 ```
 docker buildx build \
   --platform linux/amd64,linux/arm64 \
-  --tag anti1346/nettools:1.0.0
+  --tag anti1346/nettools:1.0.0 \
   --tag anti1346/nettools:latest \
   --tag anti1346/ubuntu2204:nettools \
   --push .
