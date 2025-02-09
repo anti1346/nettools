@@ -8,7 +8,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 # 필수 패키지 설치
 RUN apt-get update \
   && apt-get install -y \
-    arping telnet inetutils-ping netcat \
+    arping telnet inetutils-ping netcat-traditional \
     apt-utils sudo dialog \
     net-tools traceroute dnsutils \
     ethtool tcpdump ipcalc \
