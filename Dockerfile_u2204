@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
 LABEL maintainer="sangchul.kr"
 LABEL description="Network Tools Container with SSH and Custom User Support"

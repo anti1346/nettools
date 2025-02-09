@@ -8,9 +8,9 @@ docker buildx inspect --bootstrap || docker buildx create --use
 ```
 docker buildx build \
   --platform linux/amd64,linux/arm64 \
-  --tag anti1346/nettools:1.0.0 \
+  --tag anti1346/nettools:2.0.0 \
   --tag anti1346/nettools:latest \
-  --tag anti1346/ubuntu2204:nettools \
+  --tag anti1346/ubuntu2404:nettools \
   --push .
 ```
 ##### 3. Docker Hub에서 빌드된 이미지 가져오기
