@@ -6,9 +6,12 @@ docker buildx inspect --bootstrap || docker buildx create --use
 ```
 ##### 2. 멀티 플랫폼 Docker 이미지를 빌드하고 푸시
 ```
-docker buildx build --platform linux/amd64,linux/arm64 \
-  --tag anti1346/nettools:1.0.0 --tag anti1346/nettools:latest \
-  --tag anti1346/ubuntu2204:nettools --push .
+docker buildx build \
+  --platform linux/amd64,linux/arm64 \
+  --tag anti1346/nettools:1.0.0
+  --tag anti1346/nettools:latest \
+  --tag anti1346/ubuntu2204:nettools \
+  --push .
 ```
 ##### 3. Docker Hub에서 빌드된 이미지 가져오기
 ```
@@ -20,7 +23,10 @@ docker inspect anti1346/nettools:latest --format='{{.Architecture}}'
 ```
 ##### 5. Docker 컨테이너 실행 (기본 옵션)
 ```
-docker run -it --rm --name nettools -h nettools anti1346/nettools:latest
+docker run -it --rm \
+  -e SSH_ROOT_PASSWORD=myrootpassword \
+  -e SSH_PASSWORD=myuserpassword \
+  --name nettools anti1346/nettools:latest
 ```
 ##### 6. Docker 컨테이너 실행 (네트워크 관련 권한 부여)
 ```
